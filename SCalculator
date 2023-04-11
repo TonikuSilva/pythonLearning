@@ -18,12 +18,9 @@ print('Olá, usuário!')
 num1Str = input('Entre com o primeiro número: ')
 num2Str = input('Entre com o segundo número: ')
 
-try:
-    num1 = int(num1Str)
-    num2 = int(num2Str)
-except ValueError:
-    print("Você digitou um número inválido!")
-    exit()
+
+num1 = float(num1Str)
+num2 = float(num2Str)
 
 print('Digite 1 para somar\nDigite 2 para subtrair\nDigite 3 para dividir\nDigite 4 para multiplicar\nDigite 5 para achar a potência10')
 
