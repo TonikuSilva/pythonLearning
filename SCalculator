@@ -1,0 +1,53 @@
+from math import pow
+
+def somar (a, b):
+    return a + b
+def subtrair (a, b):
+    return a - b
+def dividir (a, b):
+    if b == 0:
+        raise ValueError("Não é possível dividir por zero, mané!")
+    return a/b 
+def multiplicar (a, b):
+    return (a * b)
+def potencia (a, b):
+    return pow(a, b)
+
+
+print('Olá, usuário!')
+num1Str = input('Entre com o primeiro número: ')
+num2Str = input('Entre com o segundo número: ')
+
+try:
+    num1 = int(num1Str)
+    num2 = int(num2Str)
+except ValueError:
+    print("Você digitou um número inválido!")
+    exit()
+
+print('Digite 1 para somar\nDigite 2 para subtrair\nDigite 3 para dividir\nDigite 4 para multiplicar\nDigite 5 para achar a potência10')
+
+escolha = input('O que você deseja fazer?: ')
+
+try:
+    escolha_int = int(escolha)
+except ValueError:
+    print("Escolha inválida!")
+    exit()
+
+
+if escolha_int == 1:
+    print(f'A soma dos números é igual a: {somar(num1, num2)}')
+elif escolha_int == 2:
+    print(f'A subtração dos números é igual a: {subtrair(num1, num2)}')
+elif escolha_int == 3:
+    try:
+     print(f'A divisão dos números é igual a: {dividir(num1, num2)}')
+    except ValueError as e:
+     print(e)
+elif escolha_int == 4:
+    print(f'A multiplicação dos números é igual a: {multiplicar(num1, num2)}')
+elif escolha_int == 5:
+    print(f'{num1Str} elevado a {num2Str} é igual a: {potencia(num1, num2)}')
+else:
+    print("Você digitou uma escolha inválida!")
